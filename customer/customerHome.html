@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyBnBzKdauge4cEt81mzAKQTZ4MCGZXm2aQ",
+          authDomain: "hckfnl.firebaseapp.com",
+          projectId: "hckfnl",
+          storageBucket: "hckfnl.appspot.com",
+          messagingSenderId: "683503624153",
+          appId: "1:683503624153:web:39d048c18377fdc725c3c8"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+      </script>
+    <script src="app.js"></script>
+    <style>
+        * {
+            padding: 0px;
+            margin: 0px;
+        }
+
+        body {
+            background-image: url('https://www.logogrand.com/news/wp-content/uploads/2020/08/Restaurant-feasibility-study-TRG-Restaurant-Consultant.jpg');
+            font-weight: bolder;
+        }
+
+        nav {
+            background-color: rgb(120, 126, 110);
+            height: 8vh;
+            top: 0;
+            padding: 0px;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            padding-left: 20px;
+
+        }
+
+        ul li {
+            list-style: none;
+            padding: 20px 50px 0px 0px;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: black;
+        }
+
+        ul li a:hover {
+            color: white;
+        }
+
+        #nameLi {
+            position: absolute;
+            right: 0px;
+            padding: 0;
+        }
+
+        #signOut {
+            border: none;
+            background-color: inherit;
+        }
+
+        #signOut:hover {
+            color: white;
+            cursor: pointer;
+        }
+
+        .cards {
+            margin: 20px;
+            display: flex;
+            flex-direction: row;
+
+        }
+
+        @media screen and (max-width: 700px) {
+            .cards {
+                flex-direction: column;
+            }
+        }
+
+        .card {
+            border: black 2px solid;
+            background-color: white;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            align-items: center;
+            font-weight: bolder;
+        }
+
+        .card #foodImg {
+            width: 100%;
+        }
+
+        .card a {
+            text-decoration: none;
+            color: rgb(106, 109, 101);
+        }
+
+        .card a:hover {
+            color: black;
+        }
+
+        #foodImg {
+            height: 70%;
+        }
+
+        .head {
+            text-align: center;
+        }
+
+        .btn {
+            border: none;
+            background-color: inherit;
+            color: rgb(121, 126, 112);
+        }
+
+        .btn:hover {
+            color: black;
+            cursor: pointer;
+        }
+
+        .hidden {
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body onload="restaurants()">
+    <nav class="navbar">
+        <ul>
+            <li>
+                <a href="customerHome.html">
+                    <h3>Home</h3>
+                </a>
+            </li>
+            <li>
+                <a href="customerCart.html">
+                    <h3>Cart</h3>
+                </a>
+            </li>
+            <li id="nameLi">
+                <h3 id="name"></h3>
+                <br>
+                <button onclick="signOut()" id="signOut">Sign Out</button>
+            </li>
+        </ul>
+
+    </nav>
+    <div class="head">
+        <h1>Restaurants Available</h1>
+    </div>
+    <div class="cards" id="cards">
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
+
+
+<!-- for (b = 0; b < 1; b++) { document.getElementById('cards').innerHTML +=` <div class="card" style="width: 18rem;">
+    <img src="${x.dishImage}" class="card-img-top" alt="..." id="foodImg">
+    <div class="card-body">
+        <h2 class="card-title" id="foodName">${x.dishName}</h2>
+        <h4 class="card-text">Price : <span id="foodPrice">${x.dishPrice}</span></h4>
+        <h4 class="card-text">Delivery : <span id="foodDelivery">${x.deliveryType}</span></h4>
+    </div>
+    </div>`
+    } -->

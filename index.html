@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+          apiKey: "AIzaSyBnBzKdauge4cEt81mzAKQTZ4MCGZXm2aQ",
+          authDomain: "hckfnl.firebaseapp.com",
+          projectId: "hckfnl",
+          storageBucket: "hckfnl.appspot.com",
+          messagingSenderId: "683503624153",
+          appId: "1:683503624153:web:39d048c18377fdc725c3c8"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+      </script>
+    <style>
+        body {
+            background-color: black;
+            text-align: center;
+            padding: 10px auto;
+            color: #67695d;
+        }
+
+        #default {
+            color: #4d4e47;
+            border: 2px solid #6a6b67;
+            border-radius: 10px;
+            background-color: black;
+            height: 7vh;
+            width: 10%;
+
+        }
+
+        #default:hover {
+            color: white;
+            border: 2px solid #60615e;
+            border-radius: 10px;
+            background-color: #7d7e79;
+            cursor: pointer;
+        }
+
+        .button {
+            padding-top: 15%;
+            padding: 10px auto;
+            flex-direction: column;
+        }
+
+        .main {
+            /* width: 100%; */
+            height: 100%;
+        }
+
+        #form {
+            border: 2px solid #62635f;
+            border-radius: 200px;
+            width: 40%;
+            background-color: black;
+            margin-left: 30%;
+            margin-top: 1%;
+            padding: 3%;
+        }
+
+        label {
+            font-weight: bolder;
+        }
+
+        .btn-signup {
+            color: #666861;
+            border: 2px solid #747572;
+            border-radius: 10px;
+            background-color: black;
+            height: 7vh;
+            width: 20%;
+        }
+
+        .btn-signup:hover {
+            color: white;
+            border: 2px solid #747570;
+            border-radius: 10px;
+            background-color: #7b7c75;
+        }
+
+        button {
+            font-size: 90%;
+        }
+
+        p {
+            color: white;
+        }
+
+        #changeBtn {
+            border: none;
+            background-color: inherit;
+            color: white;
+            font-size: 20px;
+        }
+
+        #changeBtn:hover {
+            color: rgb(102, 104, 100);
+        }
+
+        @media screen and (max-width: 900px) {
+            body {
+                font-size: 70%;
+            }
+
+            h1 {
+                font-size: 90%;
+            }
+
+            input {
+                height: 50%;
+            }
+        }
+
+        @media screen and (max-width: 430px) {
+            body {
+                font-size: 20%;
+            }
+
+            h1 {
+                font-size: 100%;
+            }
+
+            #changeBtn {
+                font-size: 100%;
+            }
+
+            input {
+                height: 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="main" class="main">
+        <div class="button">
+
+            <h1 style="color: white;">Food Delivery Website</h1>
+            <br><br>
+            <button onclick="restaurantSignUpForm()" id="default">Sign Up As Restaurant</button>
+
+            <br><br>
+
+            <button onclick="userSignUpForm()" id="default">Sign Up As Customer</button>
+        </div>
+    </div>
+    <br>
+
+
+
+
+
+
+    <script src="app.js"></script>
+</body>
+
+</html>
